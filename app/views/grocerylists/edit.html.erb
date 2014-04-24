@@ -1,0 +1,16 @@
+<h1>Edit List Item</h1>
+
+<%= form_for @grocerylist do |f| %>
+
+  <%= label_tag(:description, "Description") %> 
+  <%= f.text_area :description %></br>
+  
+	<%= label_tag(:qty, "Qty:") %>
+  <%= f.text_field :qty %></br>
+
+  <%= label_tag(:mfg, "Mfg:") %>
+  <%= f.text_field :mfg %></br>
+
+  <%= f.submit "Update" %>
+<% end %>
+
