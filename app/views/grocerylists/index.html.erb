@@ -1,12 +1,28 @@
-<h1> Here it is </h1>
+<div class="index">
 
-<%= link_to "Add new item", new_grocerylist_path, :class => "btn btn-success" %>
+<body>
+   
+	<div class="image">
+		<h1> Grocery Rails </h1>
+	</div>
 
-<% @grocerylists.each do |grocerylist| %>
-	<li><%= link_to grocerylist.description, grocerylist_path(grocerylist.id)%>
-		<%= link_to "Edit", edit_grocerylist_path(grocerylist.id), :class => "btn btn-danger" %>
-		<%= link_to "Delete", grocerylist, method: :delete, data: {confirm: "You sure?"}%>
-	</li>
+<div class="menu">
+	<!-- Add new item: -->
+	<%= link_to "Add new item", new_grocerylist_path, :class => "btn btn-success btn-xs" %></br></br>
 
-<% end %>
+	<!-- Grocery list: -->
+	<% @grocerylists.each do |grocerylist| %>
+	<!-- <li> -->
+		<%= link_to grocerylist.description, grocerylist_path(grocerylist.id) %>
+		<%= link_to "Edit", edit_grocerylist_path(grocerylist.id), :class => "btn btn-primary btn-sm" %>
+		<%= link_to "Delete", grocerylist, :class => "btn btn-warning btn-sm", method: :delete, data: {confirm: "You sure?"} %></br></br>
+	<!-- </li> -->
+	<% end %>
+</div>
+
+</body>
+
+
+</div>
+
 
